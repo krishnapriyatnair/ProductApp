@@ -1,0 +1,36 @@
+<div id="login">
+    <div class="card col-mx-auto" style="width: 48rem;">
+      <div class="card-header">
+        <h2>{{title}}</h2>
+        </div>
+      <div class="card-body">
+          <form class="needs-validation" (ngSubmit)="LoginValidate()" [formGroup]='loginForm'>
+        <div class="form-row">
+         
+          <label for="Email">Email address</label>
+      <input type="email" [class.is-invalid]="loginForm.get('email').invalid || loginForm.get('email').touched" formControlName="email" class="form-control" id="Email1" aria-describedby="emailHelp" placeholder="Enter email" name="userEmail"  [(ngModel)]="userItem.userEmail"  required>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div> 
+    <div *ngIf="loginForm.get('email').invalid || loginForm.get('email').touched">
+      <small *ngIf="loginForm.get('email').errors?.required" class="text-danger"> Enter email</small>
+      <small *ngIf="loginForm.get('email').errors?.pattern" class="text-danger"> Invalid email</small>
+    </div>
+    <div class="form-row">
+      <label for="Password">Password</label>
+      <input type="password" [class.is-invalid]="loginForm.get('password').invalid || loginForm.get('password').touched"formControlName="password" class="form-control" id="Password" placeholder="Password" name="userPassword"[(ngModel)]="userItem.userPassword"  required>
+    </div>  
+    <div *ngIf="loginForm.get('password').invalid || loginForm.get('password').touched">
+      <small *ngIf="loginForm.get('password').errors?.required" class="text-danger"> Enter Password</small>
+      <small *ngIf="loginForm.get('email').errors?.minlength" class="text-danger"> Minimum 6 characters needed.</small>
+    </div> 
+    <div class="form-row">
+      <div class="form-group">
+      <br>
+      
+        <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+    </div>
+  </div>
+      </form>
+    </div> 
+    </div> 
+  </div>    

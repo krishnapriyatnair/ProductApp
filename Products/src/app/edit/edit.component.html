@@ -1,0 +1,44 @@
+
+<div class="card" >
+  <div class="card-header"> 
+    <h3> <marquee behavior="scroll" direction="left"> {{title}} </marquee>
+    </h3> 
+  </div>
+  <div class="card-body">
+      <div class="table-responsive">
+          <table class="table">
+              <thead>
+                  <tr>
+                    <th >
+                       Image
+                    </th>
+                    <th>Product</th>
+                    <th>Code</th>
+                    <th>Available</th>
+                    <th>Price</th>
+                    <th>5 star Rating</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let product of products">
+                    <td>
+                      <img *ngIf='showImage'
+                      [src]='product.imageUrl'
+                      [title]='product.productName'
+                      [style.width.px]='imageWidth'
+                      [style.margin.px]='imageMargin'>
+                      
+                    </td>
+                    <td>{{product.productName}}</td>
+                    <td>{{product.productCode}}</td>
+                    <td>{{product.releaseDate}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.starRating}}</td>
+                    <td><button class="btn btn-success"[routerLink]="['/update',product._id]">Edit</button></td>
+                    <td><button class="btn btn-danger"(click)="deleteProduct(product._id)">Delete</button></td>
+                  </tr>
+                </tbody>
+          </table>
+        </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+
+h3{
+  color: blueviolet;
+  font-family: cursive;
+}
+table {
+    width:100%;
+  }
+  table, th, td{
+    border-style: groove ;
+    border-color: purple;
+    border-collapse: collapse; 
+   
+  }
+  th, td {
+    padding: 10px;
+    text-align: center;
+  }
+  table tr{
+     background-color: #eee; 
+  
+  
+  }
+  table td:hover {background-color: sandybrown;}
+  
+  table th {
+    background-color:palevioletred;
+    color: white;
+  }

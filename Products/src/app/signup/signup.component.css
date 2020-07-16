@@ -1,0 +1,17 @@
+#signup{
+    margin-left: 50px;
+    padding:60px;
+/* padding-block-start: 32px; */
+}
+.card-header{
+    text-align: left;
+    /* color: crimson; */
+    background-color: darkcyan;
+    
+}
+.card-body{
+    padding: 20px;
+    margin-left: 40px;
+    
+    
+}
